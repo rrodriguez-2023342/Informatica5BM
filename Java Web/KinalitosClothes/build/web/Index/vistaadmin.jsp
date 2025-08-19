@@ -21,17 +21,9 @@
     <body>
         <nav class="navbar">
             <div class="nav-content">
-                <div class="logo">K<span>C</span></div>
+                <div class="logo">S<span>C</span></div>
                 <ul class="menu">
                     <li><a href="Controlador?menu=Principal">Menu Principal</a></li>
-                    <li><a href="Controlador?menu=Proveedor&accion=Listar">Proveedor</a></li>
-                    <li><a href="Controlador?menu=Categoria">Categoria</a></li>
-                    <li><a href="Controlador?menu=MetodoPago&accion=Listar">Metodo P.</a></li>
-                    <li><a href="Controlador?menu=Usuarios&accion=Listar">Usuario</a></li>
-                    <li><a href="Controlador?menu=Producto&accion=Listar">Producto</a></li>
-                    <li><a href="Controlador?menu=Pedido&accion=Listar">Pedido</a></li>
-                    <li><a href="Controlador?menu=DetallePedido">Detalle P.</a></li>
-                    <li><a href="Controlador?menu=Factura&accion=Listar">Factura</a></li>
                 </ul>
             </div>
         </nav>
@@ -55,34 +47,6 @@
 
                 <div class="admin-card">
                     <span class="card-icon">
-                        <i class="fa-solid fa-layer-group"></i> </span>
-                    <h3 class="card-title">Categoría</h3>
-                    <p class="card-description">Gestiona la información de Categoria, como agregar, listar, actualizar,
-                        eliminar.</p>
-                    <a href="Controlador?menu=Categoria" class="btn_ver_gestion">Gestionar Categorías</a>
-                </div>
-
-                <div class="admin-card">
-                    <span class="card-icon">
-                        <i class="fa-solid fa-money-check-dollar"></i></span>
-                    <h3 class="card-title">Método Pago</h3>
-                    <p class="card-description">Gestiona la información de Metodo Pago, como agregar, listar, actualizar,
-                        eliminar.</p>
-                    <a href="Controlador?menu=MetodoPago&accion=Listar" class="btn_ver_gestion">Gestionar Metodo Pagos</a>
-                </div>
-
-                <div class="admin-card">
-                    <span class="card-icon">
-                        <i class="fa-solid fa-user-tie"></i></span>
-                    <h3 class="card-title">Usuario</h3>
-                    <p class="card-description">Gestiona la información de Usuarios, como agregar, listar, actualizar,
-                        eliminar.
-                    </p>
-                    <a href="Controlador?menu=Usuarios&accion=Listar" class="btn_ver_gestion">Gestionar Usuarios</a>
-                </div>
-
-                <div class="admin-card">
-                    <span class="card-icon">
                         <i class="fa-brands fa-product-hunt"></i>
                     </span>
                     <h3 class="card-title">Producto</h3>
@@ -91,37 +55,7 @@
                     </p>
                     <a href="Controlador?menu=Producto&accion=Listar" class="btn_ver_gestion">Gestionar Productos</a>
                 </div>
-
-                <div class="admin-card">
-                    <span class="card-icon">
-                        <i class="fa-solid fa-truck-fast"></i> </span>
-                    <h3 class="card-title">Pedido</h3>
-                    <p class="card-description">Gestiona la información de Pedido, como agregar, listar, actualizar,
-                        eliminar.
-                    </p>
-                    <a href="Controlador?menu=Pedido&accion=Listar" class="btn_ver_gestion">Gestionar Pedidos</a>
-                </div>
-
-                <div class="admin-card">
-                    <span class="card-icon">
-                        <i class="fa-solid fa-circle-info"></i> </span>
-                    <h3 class="card-title">Detalle Pedido</h3>
-                    <p class="card-description">Gestiona la información de Detalle Pedido, como agregar, listar, actualizar,
-                        eliminar.</p>
-                    <a href="Controlador?menu=DetallePedido&accion=Listar" class="btn_ver_gestion">Gestionar Detalle Pedido</a>
-                </div>
-
-                <div class="admin-card">
-                    <span class="card-icon">
-                        <i class="fa-solid fa-receipt"></i> </span>
-                    <h3 class="card-title">Factura</h3>
-                    <p class="card-description">Gestiona la información de Factura, como agregar, listar, actualizar,
-                        eliminar.</p>
-                    <a href="Controlador?menu=Factura&accion=Listar" class="btn_ver_gestion">Gestionar Facturas</a>
-                </div>
             </div>
         </div>
-
     </body>
-
 </html>

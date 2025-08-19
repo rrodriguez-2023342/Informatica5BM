@@ -1,4 +1,4 @@
-package Controlador;
+/*package Controlador;
 
 import com.kinalitosclothes.modelo.Usuarios;
 import com.kinalitosclothes.modelo.UsuariosDAO;
@@ -14,7 +14,7 @@ import javax.servlet.http.HttpSession;
 /**
  *
  * @author informatica
- */
+ *//*
 @WebServlet("/Validar")
 public class Validar extends HttpServlet {
 
@@ -25,7 +25,7 @@ public class Validar extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
+            /* TODO output your page here. You may use following sample code. *//*
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
@@ -46,7 +46,7 @@ public class Validar extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    @Override
+    /*@Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         request.getRequestDispatcher("Controlador?menu=Index").forward(request, response);
@@ -103,9 +103,9 @@ public class Validar extends HttpServlet {
      *
      * @return a String containing servlet description
      */
-    @Override
+    /*@Override
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
 
-}
+}*/

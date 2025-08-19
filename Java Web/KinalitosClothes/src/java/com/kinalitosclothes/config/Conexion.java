@@ -11,7 +11,7 @@ public class Conexion {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             conexion = DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/DB_KinalitosClothes?useSSL=false",
+                "jdbc:mysql://localhost:3306/DB_Supermercado?useSSL=false",
                 "quintom",
                 "admin"
             );

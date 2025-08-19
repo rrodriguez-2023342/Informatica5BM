@@ -16,17 +16,9 @@
 <body>
     <nav class="navbar">
         <div class="nav-content">
-            <div class="logo">K<span>C</span></div>
+            <div class="logo">S<span>C</span></div>
             <ul class="menu">
                 <li><a href="Controlador?menu=VistaAdmin">Menu Administrador</a></li>
-                <li><a href="Controlador?menu=vistaclientesadmin">Cliente</a></li>
-                <li><a href="Controlador?menu=Proveedor&accion=Listar">Proveedor</a></li>
-                <li><a href="Controlador?menu=vistacategoria">Categoria</a></li>
-                <li><a href="Controlador?menu=metodopagoadmin">Metodo P.</a></li>
-                <li><a href="Controlador?menu=vistaproductoadmin">Producto</a></li>
-                <li><a href="Controlador?menu=vistapedidoadmin">Pedido</a></li>
-                <li><a href="Controlador?menu=vistadetallepedidoadmin">Detalle P.</a></li>
-                <li><a href="Controlador?menu=VistaFacturaAdmin">Factura</a></li>
             </ul>
         </div>
     </nav>

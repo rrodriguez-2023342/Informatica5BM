@@ -8,116 +8,296 @@
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>K.C - Login</title>
-        <link rel="icon" type="image/x-icon" href="Images/Logo_K.C.png">
-        <link rel="stylesheet" href="Styles/index.css">
+        <title>K.C - Inicio</title>
+        <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/Images/Logo_K.C.png">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/menu.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/material-icons@1.13.12/iconfont/material-icons.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
     </head>
 
     <body>
+        <!-- SECTOR 1: NAVBAR Y HERO -->
         <nav class="navbar">
-            <div class="container">
-                <div class="logo">K<span>C</span></div>
-
+            <div class="nav-content">
+                <div class="logo">S<span>C</span></div>
+                <ul class="menu">
+                    <li><a href="#">INICIO</a></li>
+                    <li><a href="Controlador?menu=VistaAdmin">ADMINISTRACION</a></li>
+                </ul>
+                <div class="iconos">
+                </div>
             </div>
         </nav>
-
-        <section>
-            <div class="container">
-                <div class="segundo_contenedor">
-                    <div class="informacion">
-                        <span class="line"></span>
-                        <h2>Bienvenido a <br><span>Kinalitos Clothes</span></h2>
-                        <p>Encuentra toda tu ropa a buenos precios</p>
-                        <a href="https://wa.link/cp8m9x" class="btnContacto">Contactanos</a>
-                        <div class="redes-sociales">
-                            <a href="https://www.facebook.com/"><i
-                                    class="fa-brands fa-facebook-f"></i></a>
-                            <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
-                            <a href="https://discord.gg/K5C57rwJGM"><i class="fa-brands fa-discord"></i></a>
-                        </div>
-                    </div>
-
-
-                    <div class="login">
-                        <div class="form">
-                            <div class="text-center">
-                                <h6><span>Log in </span> <span>Sign up</span></h6>
-                                <input type="checkbox" class="checkbox" id="reg-log">
-                                <label for="reg-log"></label>
-
-                                <div class="card-3d-wrap">
-                                    <div class="card-3d-wrapper">
-
-                                        <!-- FORMULARIO DE LOGIN -->
-                                        <div class="card-front">
-                                            <div class="center-wrap">
-                                                <form action="Validar" method="Post">
-                                                    <h4 class="heading">Inicio de Sesión</h4>
-                                                    <div class="form-group">
-                                                        <input type="text" name="txtCorreo" id="txtCorreo" class="form-style" placeholder="Email" autocomplete="off" required>
-                                                        <i class="input-icon material-icons">perm_identity</i>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <input type="password" name="txtPassword" id="txtPassword" class="form-style" placeholder="Contraseña" autocomplete="off" required>
-                                                        <i class="input-icon material-icons">lock</i>
-                                                    </div>
-                                                    <center>
-                                                        <input type="submit" class="btnIniciar" name="accion" value="Ingresar" placeholder="Entrar">
-                                                    </center>
-                                                    <p class="text-center">
-                                                        <a href="#" class="link">No te recuerdas de tu contraseña???</a>
-                                                    </p>
-                                                </form>
-                                            </div>
-                                        </div>
-
-                                        <!-- FORMULARIO DE REGISTRO -->
-                                        <div class="card-back">
-                                            <div class="center-wrap">
-                                                <form action="Controlador?menu=Usuarios&accion=RegistroLogin" method="post">
-                                                    <h4 class="heading">Registrarse</h4>
-
-                                                    <div class="form-group">
-                                                        <input type="text" name="txtUsuarioR" id="usuario_registro" class="form-style" placeholder="Email" autocomplete="off" required>
-                                                        <i class="input-icon material-icons">perm_identity</i>
-                                                    </div>
-
-                                                    <div class="form-group">
-                                                        <input type="password" name="txtPasswordR" id="password_registro" class="form-style" placeholder="Contraseña" autocomplete="off" required>
-                                                        <i class="input-icon material-icons">lock</i>
-                                                    </div>
-
-                                                    <div class="form-group">
-                                                        <input type="password" name="confirmar" id="confirmar_registro" class="form-style" placeholder="Confirmar contraseña" autocomplete="off" required>
-                                                        <i class="input-icon material-icons">lock</i>
-                                                    </div>
-                                                    <c:if test="${not empty errorRegistro}">
-                                                        <div class="alert-error-small">${errorRegistro}</div>
-                                                    </c:if>
-                                                    <center>
-                                                        <button type="submit" class="btnRegistrar">Registrarme</button>
-                                                    </center>
-                                                </form>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
+        <section class="hero">
+            <div class="hero-content">
+                <span class="descuento">hasta 30% de descuento</span>
+                <h1>LA MEJOR ROPA URBANA</h1>
+                <h2>PARA TU ESTILO UNICO</h2>
+                <a href="#NuevosProductos" class="btn-coleccion">VER COLECCION</a>
+            </div>
+        </section>
+        <!-- SECTOR 2: OFERTAS DESTACADAS -->
+        <section class="ofertas-destacadas">
+            <div class="oferta">
+                <img src="${pageContext.request.contextPath}/Images/ropa1.jpg" alt="Oferta Laptop">
+                <div class="oferta-info">
+                    <h3>OFERTA DEL DIA</h3>
+                    <p>Hasta 45% de descuento en camicetas</p>
+                    <a href="Controlador?menu=VistaProducto" class="btn-oferta">COMPRAR AHORA</a>
+                </div>
+            </div>
+            <div class="oferta">
+                <img src="${pageContext.request.contextPath}/Images/ropa2.jpg" alt="Oferta Reloj">
+                <div class="oferta-info">
+                    <h3>EL MAS VENDIDO</h3>
+                    <p>Precio desde $100</p>
+                    <a href="Controlador?menu=VistaProducto" class="btn-oferta">COMPRAR AHORA</a>
                 </div>
             </div>
         </section>
+        <!-- SECTOR 3: NUEVOS PRODUCTOS -->
+        <section id="NuevosProductos" class="nuevos-productos-titulo">
+            <h2>NUEVOS PRODUCTOS</h2>
+            <a href="Controlador?menu=VistaProducto" class="btn-ver-todo">VER TODO</a>
+        </section>
+        <section class="acciones-imagenes-con-flechas">
+            <button class="carrusel-flecha flecha-izq" aria-label="Anterior">
+                <div class="button flecha-personalizada">
+                    <div class="line one">
+                        <div class="round"></div>
+                        <div class="round"></div>
+                        <div class="round"></div>
+                        <div class="round"></div>
+                    </div>
+                    <div class="line two">
+                        <div class="round"></div>
+                        <div class="round"></div>
+                        <div class="round"></div>
+                        <div class="round"></div>
+                    </div>
+                    <div class="line three">
+                        <div class="round"></div>
+                        <div class="round"></div>
+                        <div class="round"></div>
+                        <div class="round"></div>
+                    </div>
+                    <div class="line four">
+                        <div class="round"></div>
+                        <div class="round"></div>
+                        <div class="round"></div>
+                        <div class="round"></div>
+                    </div>
+                    <div class="line five">
+                        <div class="round"></div>
+                        <div class="round"></div>
+                        <div class="round"></div>
+                        <div class="round"></div>
+                    </div>
+                    <div class="line six">
+                        <div class="round"></div>
+                        <div class="round"></div>
+                        <div class="round"></div>
+                        <div class="round"></div>
+                    </div>
+                    <div class="line seven">
+                        <div class="round"></div>
+                        <div class="round"></div>
+                        <div class="round"></div>
+                        <div class="round"></div>
+                    </div>
+                </div>
+            </button>
+            <section class="acciones-imagenes">
+                <div class="accion-imagen">
+                    <img src="${pageContext.request.contextPath}/Images/ropap3.jpg" alt="Producto 1">
+                </div>
+                <div class="accion-imagen">
+                    <img src="${pageContext.request.contextPath}/Images/ropap4.jpg" alt="Producto 2">
+                </div>
+                <div class="accion-imagen">
+                    <img src="${pageContext.request.contextPath}/Images/ropap5.jpg" alt="Producto 3">
+                </div>
+                <div class="accion-imagen">
+                    <img src="${pageContext.request.contextPath}/Images/ropap6.jpg" alt="Producto 4">
+                </div>
+            </section>
+            <button class="carrusel-flecha flecha-der" aria-label="Siguiente">
+                <div class="button flecha-personalizada" style="transform: rotate(180deg)">
+                    <div class="line one">
+                        <div class="round"></div>
+                        <div class="round"></div>
+                        <div class="round"></div>
+                        <div class="round"></div>
+                    </div>
+                    <div class="line two">
+                        <div class="round"></div>
+                        <div class="round"></div>
+                        <div class="round"></div>
+                        <div class="round"></div>
+                    </div>
+                    <div class="line three">
+                        <div class="round"></div>
+                        <div class="round"></div>
+                        <div class="round"></div>
+                        <div class="round"></div>
+                    </div>
+                    <div class="line four">
+                        <div class="round"></div>
+                        <div class="round"></div>
+                        <div class="round"></div>
+                        <div class="round"></div>
+                    </div>
+                    <div class="line five">
+                        <div class="round"></div>
+                        <div class="round"></div>
+                        <div class="round"></div>
+                        <div class="round"></div>
+                    </div>
+                    <div class="line six">
+                        <div class="round"></div>
+                        <div class="round"></div>
+                        <div class="round"></div>
+                        <div class="round"></div>
+                    </div>
+                    <div class="line seven">
+                        <div class="round"></div>
+                        <div class="round"></div>
+                        <div class="round"></div>
+                        <div class="round"></div>
+                    </div>
+                </div>
+            </button>
+        </section>
+        <!-- SECTOR 4: RESEÃAS Y BANNER -->
+        <section class="resenas-clientes">
+            <h2 class="titulo-resenas">RESEÑAS DE NUESTROS CLIENTES</h2>
+            <div class="resenas-lista">
+                <div class="resena">
+                    <p>"¡La calidad de la ropa es excelente y el envio fue muy rapido! Sin duda volveria a comprar."</p>
+                    <span class="cliente">Ana Perez</span>
+                </div>
+                <div class="resena">
+                    <p>"Me encanta la variedad de estilos y los precios accesibles. ¡Muy recomendable!"</p>
+                    <span class="cliente">Carlos Mendez</span>
+                </div>
+                <div class="resena">
+                    <p>"El servicio al cliente fue muy atento y la ropa llega en perfecto estado."</p>
+                    <span class="cliente">Maria Lopez</span>
+                </div>
+            </div>
+            <div class="resenas-puntos">
+                <span class="punto activo"></span>
+                <span class="punto"></span>
+                <span class="punto"></span>
+            </div>
+        </section>
+        <section class="banner-imagen">
+            <img src="${pageContext.request.contextPath}/Images/fondoh.jpg" alt="Banner Tienda" class="banner-img">
+        </section>
+        <!-- SECTOR 5: PRODUCTOS DESTACADOS Y ARTÃCULOS DE MODA -->
+        <section class="nuevos-productos-titulo">
+            <h2>PRODUCTOS DESTACADOS</h2>
+            <a href="Controlador?menu=VistaProducto" class="btn-ver-todo">VER TODO</a>
+        </section>
+        <section class="acciones-imagenes-con-flechas">
+            <button class="carrusel-flecha flecha-izq" aria-label="Anterior">
+                <div class="button flecha-personalizada">
+                    <div class="line one"><div class="round"></div><div class="round"></div><div class="round"></div><div class="round"></div></div>
+                    <div class="line two"><div class="round"></div><div class="round"></div><div class="round"></div><div class="round"></div></div>
+                    <div class="line three"><div class="round"></div><div class="round"></div><div class="round"></div><div class="round"></div></div>
+                    <div class="line four"><div class="round"></div><div class="round"></div><div class="round"></div><div class="round"></div></div>
+                    <div class="line five"><div class="round"></div><div class="round"></div><div class="round"></div><div class="round"></div></div>
+                    <div class="line six"><div class="round"></div><div class="round"></div><div class="round"></div><div class="round"></div></div>
+                    <div class="line seven"><div class="round"></div><div class="round"></div><div class="round"></div><div class="round"></div></div>
+                </div>
+            </button>
+            <section class="acciones-imagenes">
+                <div class="accion-imagen">
+                    <img src="${pageContext.request.contextPath}/Images/ropasec2.jpg" alt="Producto Destacado 1">
+                </div>
+                <div class="accion-imagen">
+                    <img src="${pageContext.request.contextPath}/Images/ropasec2.3.jpg" alt="Producto Destacado 2">
+                </div>
+                <div class="accion-imagen">
+                    <img src="${pageContext.request.contextPath}/Images/ropasec2.4.jpg" alt="Producto Destacado 3">
+                </div>
+                <div class="accion-imagen">
+                    <img src="${pageContext.request.contextPath}/Images/ropasec2.5.jpg" alt="Producto Destacado 4">
+                </div>
+            </section>
+            <button class="carrusel-flecha flecha-der" aria-label="Siguiente">
+                <div class="button flecha-personalizada" style="transform: rotate(180deg)">
+                    <div class="line one"><div class="round"></div><div class="round"></div><div class="round"></div><div class="round"></div></div>
+                    <div class="line two"><div class="round"></div><div class="round"></div><div class="round"></div><div class="round"></div></div>
+                    <div class="line three"><div class="round"></div><div class="round"></div><div class="round"></div><div class="round"></div></div>
+                    <div class="line four"><div class="round"></div><div class="round"></div><div class="round"></div><div class="round"></div></div>
+                    <div class="line five"><div class="round"></div><div class="round"></div><div class="round"></div><div class="round"></div></div>
+                    <div class="line six"><div class="round"></div><div class="round"></div><div class="round"></div><div class="round"></div></div>
+                    <div class="line seven"><div class="round"></div><div class="round"></div><div class="round"></div><div class="round"></div></div>
+                </div>
+            </button>
+        </section>
+        <section class="nuevos-productos-titulo">
+            <h2>ARTICULOS DE MODA</h2>
+            <a href="Controlador?menu=VistaProducto" class="btn-ver-todo">VER TODO</a>
+        </section>
+        <section class="acciones-imagenes-con-flechas">
+            <button class="carrusel-flecha flecha-izq" aria-label="Anterior">
+                <div class="button flecha-personalizada">
+                    <div class="line one"><div class="round"></div><div class="round"></div><div class="round"></div><div class="round"></div></div>
+                    <div class="line two"><div class="round"></div><div class="round"></div><div class="round"></div><div class="round"></div></div>
+                    <div class="line three"><div class="round"></div><div class="round"></div><div class="round"></div><div class="round"></div></div>
+                    <div class="line four"><div class="round"></div><div class="round"></div><div class="round"></div><div class="round"></div></div>
+                    <div class="line five"><div class="round"></div><div class="round"></div><div class="round"></div><div class="round"></div></div>
+                    <div class="line six"><div class="round"></div><div class="round"></div><div class="round"></div><div class="round"></div></div>
+                    <div class="line seven"><div class="round"></div><div class="round"></div><div class="round"></div><div class="round"></div></div>
+                </div>
+            </button>
+            <section class="acciones-imagenes">
+                <div class="accion-imagen">
+                    <img src="${pageContext.request.contextPath}/Images/ropasec3.jpg" alt="Producto Destacado 1">
+                </div>
+                <div class="accion-imagen">
+                    <img src="${pageContext.request.contextPath}/Images/ropasec3.2.jpg" alt="Producto Destacado 2">
+                </div>
+                <div class="accion-imagen">
+                    <img src="${pageContext.request.contextPath}/Images/ropasec3.4.jpg" alt="Producto Destacado 3">
+                </div>
+                <div class="accion-imagen">
+                    <img src="${pageContext.request.contextPath}/Images/ropasec3.3.jpg" alt="Producto Destacado 4">
+                </div>
+            </section>
+            <button class="carrusel-flecha flecha-der" aria-label="Siguiente">
+                <div class="button flecha-personalizada" style="transform: rotate(180deg)">
+                    <div class="line one"><div class="round"></div><div class="round"></div><div class="round"></div><div class="round"></div></div>
+                    <div class="line two"><div class="round"></div><div class="round"></div><div class="round"></div><div class="round"></div></div>
+                    <div class="line three"><div class="round"></div><div class="round"></div><div class="round"></div><div class="round"></div></div>
+                    <div class="line four"><div class="round"></div><div class="round"></div><div class="round"></div><div class="round"></div></div>
+                    <div class="line five"><div class="round"></div><div class="round"></div><div class="round"></div><div class="round"></div></div>
+                    <div class="line six"><div class="round"></div><div class="round"></div><div class="round"></div><div class="round"></div></div>
+                    <div class="line seven"><div class="round"></div><div class="round"></div><div class="round"></div><div class="round"></div></div>
+                </div>
+            </button>
+        </section>
+
+        <br></br>
+        <br></br>
+
+        <footer class="footer">
+            <div class="footer-contenido">
+                <div class="footer-logo">
+                    <span>KinalitosClothes</span>
+                </div>
+            </div>
+            <div class="footer-copy">
+                © Todos los derechos reservados por KinalitosClothes 👻
+            </div>
+        </footer>
     </body>
 
 </html>
