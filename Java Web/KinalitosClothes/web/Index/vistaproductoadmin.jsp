@@ -1,4 +1,3 @@
-vista jsp de producto
 <%-- Document : vistaproductoadmin Created on : 22 jul 2025, 13:12:45 Author : PC --%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -11,7 +10,7 @@ vista jsp de producto
         <meta https-equiv=" X-UA-Compatible" content="IE-edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>CRUD_Producto</title>
-        <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/Images/Logo_K.C.png">
+        <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/Images/Logo_KM.png">
         <link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/vistaproductoadmin.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     </head>
@@ -54,7 +53,7 @@ vista jsp de producto
 
                         </div>
                         <div class="form-row">
-                            <button type="submit" class="btn_crear_producto" value="Agregar" name="accion">
+                            <button type="submit" class="btn_actualizar" value="Agregar" name="accion">
                                 <span class="bnt_texto">Crear Producto</span>
                                 <span class="btn_icono">
                                     <i class="fa-solid fa-plus"></i>

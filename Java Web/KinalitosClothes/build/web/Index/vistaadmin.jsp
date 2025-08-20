@@ -11,6 +11,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>KM Admin - Panel de Control</title>
+        <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/Images/Logo_KM.png">
         <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600;700;900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
         <link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/vistaadmin.css"/>
@@ -31,7 +32,6 @@
         <div class="container">
             <div class="hero">
                 <div class="hero-content">
-                    <div class="anniversary-badge">25 AÑOS</div>
                     <h1><span class="highlight">Panel de Control</span></h1>
                 </div>
             </div>

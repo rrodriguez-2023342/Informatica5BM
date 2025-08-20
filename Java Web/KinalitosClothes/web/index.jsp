@@ -11,6 +11,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>KinalitosMarket - Tu Supermercado de Confianza</title>
+        <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/Images/Logo_KM.png">
         <link rel="stylesheet" href="Styles/index.css"/>>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -69,7 +70,7 @@
                     <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
                     <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
                 </div>
-                
+
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img src="https://images.unsplash.com/photo-1578916171728-46686eac8d58?w=1200&h=600&fit=crop" class="d-block w-100" alt="Ofertas Especiales">
@@ -96,7 +97,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Anterior</span>
