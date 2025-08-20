@@ -6,17 +6,17 @@ public class Proveedores {
     private String nombreProveedor;
     private String telefonoProveedor;
     private String correoProveedor;
-    private String paisProveedor;
+    private String direccionProveedor;
 
     public Proveedores() {
     }
 
-    public Proveedores(int codigoProveedor, String nombreProveedor, String telefonoProveedor, String correoProveedor, String paisProveedor) {
+    public Proveedores(int codigoProveedor, String nombreProveedor, String telefonoProveedor, String correoProveedor, String direccionProveedor) {
         this.codigoProveedor = codigoProveedor;
         this.nombreProveedor = nombreProveedor;
         this.telefonoProveedor = telefonoProveedor;
         this.correoProveedor = correoProveedor;
-        this.paisProveedor = paisProveedor;
+        this.direccionProveedor = direccionProveedor;
     }
 
     public int getCodigoProveedor() {
@@ -51,25 +51,13 @@ public class Proveedores {
         this.correoProveedor = correoProveedor;
     }
 
-    public String getPaisProveedor() {
-        return paisProveedor;
+    public String getDireccionProveedor() {
+        return direccionProveedor;
     }
 
-    public void setPaisProveedor(String paisProveedor) {
-        this.paisProveedor = paisProveedor;
+    public void setDireccionProveedor(String direccionProveedor) {
+        this.direccionProveedor = direccionProveedor;
     }
 
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Proveedores{");
-        sb.append("codigoProveedor=").append(codigoProveedor);
-        sb.append(", nombreProveedor=").append(nombreProveedor);
-        sb.append(", telefonoProveedor=").append(telefonoProveedor);
-        sb.append(", correoProveedor=").append(correoProveedor);
-        sb.append(", paisProveedor=").append(paisProveedor);
-        sb.append('}');
-        return sb.toString();
-    }
-
+    
 }

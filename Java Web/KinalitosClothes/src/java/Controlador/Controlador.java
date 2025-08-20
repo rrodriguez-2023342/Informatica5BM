@@ -29,7 +29,7 @@ public class Controlador extends HttpServlet {
             throws ServletException, IOException, ParseException {
         String menu = request.getParameter("menu");
         String accion = request.getParameter("accion");
-        
+
         ProveedoresDAO proveedoresDAO = new ProveedoresDAO();
         Proveedores proveedores = new Proveedores();
 
@@ -65,17 +65,16 @@ public class Controlador extends HttpServlet {
 
                     request.setAttribute("proveedores", listaProveedoresB);
                     request.getRequestDispatcher("/Index/vistaproveedoradmin.jsp").forward(request, response);
-
                     break;
                 case "Agregar":
                     String nombreProveedor = request.getParameter("txtNombreProveedor");
                     String telefonoProveedor = request.getParameter("txtTelefonoProveedor");
                     String correoProveedor = request.getParameter("txtCorreoProveedor");
-                    String paisProveedor = request.getParameter("txtPaisProveedor");
+                    String direccionProveedor = request.getParameter("txtDireccionProveedor");
                     proveedores.setNombreProveedor(nombreProveedor);
                     proveedores.setTelefonoProveedor(telefonoProveedor);
                     proveedores.setCorreoProveedor(correoProveedor);
-                    proveedores.setPaisProveedor(paisProveedor);
+                    proveedores.setDireccionProveedor(direccionProveedor);
                     proveedoresDAO.agregar(proveedores);
                     if (proveedores != null) {
                         request.getRequestDispatcher("Controlador?menu=Proveedor&accion=Listar").forward(request, response);
@@ -84,17 +83,39 @@ public class Controlador extends HttpServlet {
                     }
                     break;
                 case "Editar":
-
+                    int idEditar = Integer.parseInt(request.getParameter("id"));
+                    Proveedores pedidoEditar = proveedoresDAO.buscar(idEditar);
+                    request.setAttribute("proveedor", pedidoEditar);
+                    request.setAttribute("proveedores", proveedoresDAO.listar());
                     break;
                 case "Actualizar":
+                    int codigoProveedor = Integer.parseInt(request.getParameter("txtCodigoProveedor"));
+                    String nombreProveedorE = request.getParameter("txtNombreProveedor");
+                    String telefonoProveedorE = request.getParameter("txtTelefonoProveedor");
+                    String correoProveedorE = request.getParameter("txtCorreoProveedor");
+                    String direccionProveedorE = request.getParameter("txtDireccionProveedor");
 
+                    proveedores.setCodigoProveedor(codigoProveedor);
+                    proveedores.setNombreProveedor(nombreProveedorE);
+                    proveedores.setTelefonoProveedor(telefonoProveedorE);
+                    proveedores.setCorreoProveedor(correoProveedorE);
+                    proveedores.setDireccionProveedor(direccionProveedorE);
+
+                    int filas = proveedoresDAO.actualizar(proveedores);
+                    System.out.println("Filas actualizadas: " + filas);
+
+                    if (filas > 0) {
+                        request.setAttribute("mensaje", "Proveedor actualizado exitosamente");
+                    } else {
+                        request.setAttribute("error", "No se pudo actualizar el proveedor");
+                    }
+                    request.setAttribute("proveedores", proveedoresDAO.listar());
                     break;
                 case "Eliminar":
                     String idEliminar = request.getParameter("id");
                     if (idEliminar != null && !idEliminar.trim().isEmpty()) {
                         try {
                             int codigo = Integer.parseInt(idEliminar);
-
                             int resultado = proveedoresDAO.eliminar(codigo);
 
                             if (resultado > 0) {
@@ -106,7 +127,6 @@ public class Controlador extends HttpServlet {
                         } catch (NumberFormatException e) {
                             request.setAttribute("error", "ID de Proveedor inválido");
                         }
-
                         response.sendRedirect("Controlador?menu=Proveedor&accion=Listar");
                         return;
                     }
@@ -241,7 +261,7 @@ public class Controlador extends HttpServlet {
             request.getRequestDispatcher("/Index/vistaproductoadmin.jsp").forward(request, response);
         } else if (menu.equals("VistaAdmin")) {
             request.getRequestDispatcher("Index/vistaadmin.jsp").forward(request, response);
-        } 
+        }
     }
 // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
 

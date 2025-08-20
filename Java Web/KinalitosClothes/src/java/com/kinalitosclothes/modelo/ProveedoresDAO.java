@@ -24,11 +24,11 @@ public class ProveedoresDAO {
             rs = ps.executeQuery();
             while (rs.next()) {
                 Proveedores prov = new Proveedores();
-                prov.setCodigoProveedor(rs.getInt("codigoProveedor"));
-                prov.setNombreProveedor(rs.getString("nombreProveedor"));
-                prov.setTelefonoProveedor(rs.getString("telefonoProveedor"));
-                prov.setCorreoProveedor(rs.getString("correoProveedor"));
-                prov.setPaisProveedor(rs.getString("paisProveedor"));
+                prov.setCodigoProveedor(rs.getInt(1));
+                prov.setNombreProveedor(rs.getString(2));
+                prov.setTelefonoProveedor(rs.getString(3));
+                prov.setCorreoProveedor(rs.getString(4));
+                prov.setDireccionProveedor(rs.getString(5));
                 listaProveedores.add(prov);
             }
         } catch (Exception e) {
@@ -45,7 +45,7 @@ public class ProveedoresDAO {
             ps.setString(1, prov.getNombreProveedor());
             ps.setString(2, prov.getTelefonoProveedor());
             ps.setString(3, prov.getCorreoProveedor());
-            ps.setString(4, prov.getPaisProveedor());
+            ps.setString(4, prov.getDireccionProveedor());
             ps.executeQuery();
         } catch (Exception e) {
             e.printStackTrace();
@@ -82,15 +82,35 @@ public class ProveedoresDAO {
 
             if (rs.next()) {
                 prov = new Proveedores();
-                prov.setCodigoProveedor(rs.getInt("codigoProveedor"));
-                prov.setNombreProveedor(rs.getString("nombreProveedor"));
-                prov.setTelefonoProveedor(rs.getString("telefonoProveedor"));
-                prov.setCorreoProveedor(rs.getString("correoProveedor"));
-                prov.setPaisProveedor(rs.getString("paisProveedor"));
+                prov.setCodigoProveedor(rs.getInt(1));
+                prov.setNombreProveedor(rs.getString(2));
+                prov.setTelefonoProveedor(rs.getString(3));
+                prov.setCorreoProveedor(rs.getString(4));
+                prov.setDireccionProveedor(rs.getString(5));
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
         return prov;
+    }
+    
+    public int actualizar (Proveedores pro){
+        String sql = "call sp_EditarProveedor(?, ?, ?, ?, ?);";
+        resp = 0;
+        try {
+            con = cn.Conexion();
+            ps = con.prepareStatement(sql);
+            ps.setInt(1, pro.getCodigoProveedor());
+            ps.setString(2, pro.getNombreProveedor());
+            ps.setString(3, pro.getTelefonoProveedor());
+            ps.setString(4, pro.getCorreoProveedor());
+            ps.setString(5, pro.getDireccionProveedor());
+            
+            resp = ps.executeUpdate();
+        } catch (Exception e) {
+            System.out.println("Error al actualizar Proveedor: " + e.getMessage());
+            e.printStackTrace();
+        }
+        return resp;
     }
 }
