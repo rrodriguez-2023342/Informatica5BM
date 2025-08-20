@@ -16,7 +16,7 @@
     <body>
         <nav class="navbar">
             <div class="nav-content">
-                <div class="logo">S<span>C</span></div>
+                <div class="logo">K<span>M</span></div>
                 <ul class="menu">
                     <li><a href="Controlador?menu=VistaAdmin">Menu Administrador</a></li>
                 </ul>
