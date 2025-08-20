@@ -40,28 +40,16 @@ vista jsp de producto
                                 <label class="label-input">Nombre Producto</label>
                             </div>
                             <div class="form-group">
-                                <input type="text" class="entrada_texto" name="txtDescripcion"  id="txtDescripcion" value="${producto.getDescripcionProducto()}" required>
-                                <label class="label-input">Descripcion</label>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="entrada_texto" id="txtPrecio" name="txtPrecio" value="${producto.getPrecioProducto()}" required>
-                                <label class="label-input">Precio en Quetzales</label>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="entrada_texto" name="txtTalla" id="txtTalla" value="${producto.getTalla()}" required>
-                                <label class="label-input">Talla</label>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="entrada_texto" name="txtStock"id="txtStock" value="${producto.getStock()}" required>
+                                <input type="text" class="entrada_texto" id="txtStock" name="txtStock" value="${producto.getStock()}" required>
                                 <label class="label-input">Stock</label>
                             </div>
                             <div class="form-group">
-                                <input type="text" class="entrada_texto" name="txtCodigoProveedor"id="txtCodigoProveedor" value="${producto.getCodigoProveedor()}" required>
-                                <label class="label-input">Codigo del Proveedor</label>
+                                <input type="text" class="entrada_texto" name="txtPrecio" id="txtPrecio" value="${producto.getPrecio()}" required>
+                                <label class="label-input">Precio</label>
                             </div>
                             <div class="form-group">
-                                <input type="text" class="entrada_texto" name="txtCodigoCategoria" id="txtCodigoCategoria" value="${producto.getCodigoCategoria()}" required>
-                                <label class="label-input">Codigo de la Categoria</label>
+                                <input type="text" class="entrada_texto" name="txtCodigoProveedor"id="txtCodigoProveedor" value="${producto.getCodigoProveedor()}" required>
+                                <label class="label-input">Codigo Proveedor</label>
                             </div>
 
                         </div>
@@ -112,12 +100,9 @@ vista jsp de producto
                                 <tr>
                                     <th scope="col">Codigo del Producto</th>
                                     <th scope="col">Nombre</th>
-                                    <th scope="col">Descripción</th>
-                                    <th scope="col">Precio</th>
-                                    <th scope="col">Talla</th>
                                     <th scope="col">Stock</th>
-                                    <th scope="col">Codigo Proveedor</th>
-                                    <th scope="col">Codigo Categoria</th>
+                                    <th scope="col">Precio</th>
+                                    <th scope="col">Codigo del Proveedor</th>
                                     <th scope="col">Acciones</th>
                                 </tr>
                             </thead>
@@ -125,12 +110,9 @@ vista jsp de producto
                                 <c:forEach var="productos" items="${productos}"><tr> 
                                         <td>${productos.getCodigoProducto()}</td>
                                         <td>${productos.getNombreProducto()}</td>
-                                        <td>${productos.getDescripcionProducto()}</td>
-                                        <td>${productos.getPrecioProducto()}</td>
-                                        <td>${productos.getTalla()}</td>
                                         <td>${productos.getStock()}</td>
+                                        <td>${productos.getPrecio()}</td>
                                         <td>${productos.getCodigoProveedor()}</td>
-                                        <td>${productos.getCodigoCategoria()}</td>
                                         <td>
                                             <button 
                                                 type="button" 

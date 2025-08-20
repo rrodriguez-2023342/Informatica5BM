@@ -170,59 +170,46 @@ public class Controlador extends HttpServlet {
                     break;
                 case "Agregar":
                     String NombreProducto = request.getParameter("txtNombreProducto");
-                    String DescripcionProducto = request.getParameter("txtDescripcion");
-                    String PrecioProducto = request.getParameter("txtPrecio");
-                    double PrecioProductoC = Double.parseDouble(PrecioProducto);
-                    String TallaProducto = request.getParameter("txtTalla");
-                    String StockProducto = request.getParameter("txtStock");
-                    int StockProductoC = Integer.parseInt(StockProducto);
+                    String StockPro = request.getParameter("txtStock");
+                    int Stock = Integer.parseInt(StockPro);
+                    String PrecioPro = request.getParameter("txtPrecio");
+                    double Precio = Double.parseDouble(PrecioPro);
                     String CodigoProveedor = request.getParameter("txtCodigoProveedor");
                     int CodigoProveedorC = Integer.parseInt(CodigoProveedor);
-                    String CodigoCategoria = request.getParameter("txtCodigoCategoria");
-                    int CodigoCategoriaC = Integer.parseInt(CodigoCategoria);
+
                     productos.setNombreProducto(NombreProducto);
-                    productos.setDescripcionProducto(DescripcionProducto);
-                    productos.setPrecioProducto(PrecioProductoC);
-                    productos.setTalla(TallaProducto);
-                    productos.setStock(StockProductoC);
+                    productos.setStock(Stock);
+                    productos.setPrecio(Precio);
                     productos.setCodigoProveedor(CodigoProveedorC);
-                    productos.setCodigoCategoria(CodigoCategoriaC);
                     productosDAO.agregar(productos);
+
                     request.getRequestDispatcher("Controlador?menu=Producto&accion=Listar").forward(request, response);
-
                     break;
-
                 case "Editar":
-                    /*Realizamos nuestro casteo a int porque solo lo guarda como String*/ int idEditar = Integer.parseInt(request.getParameter("id"));
-                    /*Llamamos a la clase producto y creamos una variable producto editar luego llamamos el dao para poder traer el metodo buscar y que nos pueda buscar el id*/
+                    /*int idEditar = Integer.parseInt(request.getParameter("id"));
+                    Proveedores pedidoEditar = proveedoresDAO.buscar(idEditar);
+                    request.setAttribute("proveedor", pedidoEditar);
+                    request.setAttribute("proveedores", proveedoresDAO.listar());*/
+                    int idEditar = Integer.parseInt(request.getParameter("id"));
                     Productos productoEditar = productosDAO.buscar(idEditar);
-                    /*despues de guardar la entidad dentro de productoEditar ahora se guarda bajo el nombre de producto*/
- /* y lo que guardamos com producto lo mando a llamar en mi jsp para que me mande a traer mis datos y mostrarlos en los formularios*/ request.setAttribute("producto", productoEditar);
-                    /* solo lista todo otra vez para que se muestren en la tabla*/
+                    request.setAttribute("producto", productoEditar);
                     request.setAttribute("productos", productosDAO.listar());
                     request.getRequestDispatcher("/Index/vistaproductoadmin.jsp").forward(request, response);
                     break;
-
                 case "Actualizar":
                     /*hacmos lo mismo del ingresar porque tenemos que volver a cargar los datos a nuestro regsitro y como ya tenemos guardado el id*/
                     int codigo = Integer.parseInt(request.getParameter("txtCodigoProducto"));
                     String nuevoNombre = request.getParameter("txtNombreProducto");
-                    String nuevaDescripcion = request.getParameter("txtDescripcion");
-                    double nuevoPrecio = Double.parseDouble(request.getParameter("txtPrecio"));
-                    String nuevaTtalla = request.getParameter("txtTalla");
                     int nuevoStock = Integer.parseInt(request.getParameter("txtStock"));
+                    double nuevoPrecio = Double.parseDouble(request.getParameter("txtPrecio"));
                     int nuevoCodProv = Integer.parseInt(request.getParameter("txtCodigoProveedor"));
-                    int nuevoCodCat = Integer.parseInt(request.getParameter("txtCodigoCategoria"));
 
                     /*Seteamos los nuevos valores para poder guradarlos en productos*/
                     productos.setCodigoProducto(codigo);
                     productos.setNombreProducto(nuevoNombre);
-                    productos.setDescripcionProducto(nuevaDescripcion);
-                    productos.setPrecioProducto(nuevoPrecio);
-                    productos.setTalla(nuevaTtalla);
                     productos.setStock(nuevoStock);
+                    productos.setPrecio(nuevoPrecio);
                     productos.setCodigoProveedor(nuevoCodProv);
-                    productos.setCodigoCategoria(nuevoCodCat);
 
                     /* llamamos al metodo actualizar del dao para as obtener el total de filas que se afectaron el la base de datos*/
                     int filas = productosDAO.actualizar(productos);

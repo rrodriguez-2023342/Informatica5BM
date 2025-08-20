@@ -26,12 +26,9 @@ public class ProductosDAO {
                 Productos pr = new Productos();
                 pr.setCodigoProducto(rs.getInt(1));
                 pr.setNombreProducto(rs.getString(2));
-                pr.setDescripcionProducto(rs.getString(3));
-                pr.setPrecioProducto(rs.getDouble(4));
-                pr.setTalla(rs.getString(5));
-                pr.setStock(rs.getInt(6));
-                pr.setCodigoProveedor(rs.getInt(7));
-                pr.setCodigoCategoria(rs.getInt(8));
+                pr.setStock(rs.getInt(3));
+                pr.setPrecio(rs.getDouble(4));
+                pr.setCodigoProveedor(rs.getInt(5));
                 listaProductos.add(pr);
             }
         } catch (Exception e) {
@@ -41,17 +38,14 @@ public class ProductosDAO {
     }
 
     public int agregar(Productos pro) {
-        String sql = "call sp_AgregarProducto(?, ?, ?, ?, ?, ?, ?);";
+        String sql = "call sp_AgregarProducto(?, ?, ?, ?);";
         try {
             con = cn.Conexion();
             ps = con.prepareStatement(sql);
             ps.setString(1, pro.getNombreProducto());
-            ps.setString(2, pro.getDescripcionProducto());
-            ps.setDouble(3, pro.getPrecioProducto());
-            ps.setString(4, pro.getTalla());
-            ps.setInt(5, pro.getStock());
-            ps.setInt(6, pro.getCodigoProveedor());
-            ps.setInt(7, pro.getCodigoCategoria());
+            ps.setInt(2, pro.getStock());
+            ps.setDouble(3, pro.getPrecio());
+            ps.setInt(4, pro.getCodigoProveedor());
             ps.executeQuery();
         } catch (Exception e) {
             e.printStackTrace();
@@ -61,19 +55,16 @@ public class ProductosDAO {
     }
 
     public int actualizar(Productos pro) {
-        String sql = "call sp_EditarProducto(?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql = "call sp_EditarProducto(?, ?, ?, ?, ?)";
         resp = 0;
         try {
             con = cn.Conexion();
             ps = con.prepareStatement(sql);
             ps.setInt(1, pro.getCodigoProducto());
             ps.setString(2, pro.getNombreProducto());
-            ps.setString(3, pro.getDescripcionProducto());
-            ps.setDouble(4, pro.getPrecioProducto());
-            ps.setString(5, pro.getTalla());
-            ps.setInt(6, pro.getStock());
-            ps.setInt(7, pro.getCodigoProveedor());
-            ps.setInt(8, pro.getCodigoCategoria());
+            ps.setInt(3, pro.getStock());
+            ps.setDouble(4, pro.getPrecio());
+            ps.setInt(5, pro.getCodigoProveedor());
             resp = ps.executeUpdate(); 
             System.out.println("Producto actualizado. Filas afectadas: " + resp);
         } catch (Exception e) {
@@ -114,12 +105,9 @@ public class ProductosDAO {
                 producto = new Productos();
                 producto.setCodigoProducto(rs.getInt(1));
                 producto.setNombreProducto(rs.getString(2));
-                producto.setDescripcionProducto(rs.getString(3));
-                producto.setPrecioProducto(rs.getDouble(4));
-                producto.setTalla(rs.getString(5));
-                producto.setStock(rs.getInt(6));
-                producto.setCodigoProveedor(rs.getInt(7));
-                producto.setCodigoCategoria(rs.getInt(8));
+                producto.setStock(rs.getInt(3));
+                producto.setPrecio(rs.getDouble(4));
+                producto.setCodigoProveedor(rs.getInt(5));
             }
         } catch (Exception e) {
             e.printStackTrace();
